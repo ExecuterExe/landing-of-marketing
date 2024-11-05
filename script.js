@@ -101,46 +101,6 @@ document.addEventListener('DOMContentLoaded', function () {
         e.target.value = cleaned;
     });
 
-    // Инициализация EmailJS
-    // Замените "YOUR_PUBLIC_KEY" на ваш публичный ключ из EmailJS
-    emailjs.init("2UxqP2yBKSW-v_c4A");
-
-    const form = document.getElementById('applicationForm');
-    form.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        // Показываем индикатор загрузки
-        showNotification('Отправка заявки...', 'info');
-
-        // Получаем данные из формы
-        const formData = {
-            name: document.getElementById('name').value,
-            phone: document.getElementById('phone').value,
-            email: document.getElementById('email').value,
-            message: document.getElementById('message').value
-        };
-
-        // Отправляем email
-        // Замените "YOUR_SERVICE_ID" и "YOUR_TEMPLATE_ID" на ваши ID из EmailJS
-        emailjs.send("profpodgotovka", "template_k270rrq", {
-            to_email: "avrazgon@fa.ru", // Email получателя
-            from_name: formData.name,
-            from_email: formData.email,
-            from_phone: formData.phone,
-            message: formData.message
-        })
-            .then(function (response) {
-                console.log("SUCCESS", response);
-                showNotification('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.', 'success');
-                form.reset();
-            })
-            .catch(function (error) {
-                console.error("FAILED", error);
-                showNotification('Произошла ошибка при отправке: ' + error.text, 'error');
-            });
-
-    });
-
     // Улучшенная функция показа уведомлений
     function showNotification(message, type = 'success') {
         const notification = document.createElement('div');

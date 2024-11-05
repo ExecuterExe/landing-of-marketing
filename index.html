@@ -22,7 +22,7 @@
                 <li><a href="#about">О программе</a></li>
                 <li><a href="#benefits">Преимущества</a></li>
                 <li><a href="#program">Учебный план</a></li>
-                <li><a href="#reviews">Отзывы</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contacts">Контакты</a></li>
             </ul>
             <div class="burger">
@@ -288,7 +288,7 @@
                 <!-- Правая колонка: Форма заявки -->
                 <div class="contact-form">
                     <h3>Оставить заявку</h3>
-                    <form id="applicationForm">
+                    <form id="applicationForm" name="submit-to-google-sheet">
                         <div class="form-group">
                             <input type="text" id="name" name="name" placeholder="Ваше имя" required>
                         </div>
@@ -360,9 +360,8 @@
             <p>Мы свяжемся с вами в ближайшее время.</p>
         </div>
     </div>
-
+    <script src="work-with-forms.js"></script>
     <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </body>
 
 </html>
